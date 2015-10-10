@@ -18,7 +18,7 @@ This plugin does three things:
 After executing the create-project task,
 > gradle clean build
 
-Should run successfully.
+should run successfully, building the sample file and executing the sample test.
 
 Plugin Information -- https://plugins.gradle.org/plugin/com.trevorism.create-project
 
