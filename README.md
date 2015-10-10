@@ -7,6 +7,7 @@ Add:
 > plugins {
 >    id "com.trevorism.create-project" version "0.1"
 > }
+
 to the build.gradle file.
 
 Then invoke one of the gradle tasks: (createJavaProject)
@@ -19,6 +20,7 @@ This plugin does three things:
 
 After executing the task,
 > gradle clean build
+
 Should run successfully.
 
 Links:
