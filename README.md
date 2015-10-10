@@ -15,14 +15,17 @@ Then invoke one of the gradle tasks: (createJavaProject)
 This plugin does three things:
 
 1) Creates the proper default folder structure for your project.
+
 2) Updates the build.gradle in order to build your project.
+
 3) Provides a sample class and test class so that you can see working software in your IDE.
 
-After executing the task,
+After executing the create-project task,
 > gradle clean build
 
 Should run successfully.
 
 Links:
 https://plugins.gradle.org/plugin/com.trevorism.create-project
+
 http://www.trevorism.com
