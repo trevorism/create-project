@@ -8,7 +8,7 @@ Start with a blank build.gradle file in a directory. Add:
 
 to the build.gradle file.
 
-Then invoke one of the gradle tasks (e.g. createJavaProject)
+Then invoke one of the gradle tasks (e.g. createJavaProject, createGroovyProject)
 This plugin does three things:
 
 * Creates the proper default folder structure for your project.

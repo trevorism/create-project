@@ -8,15 +8,15 @@ import org.gradle.api.Project
 /**
  * @author tbrooks
  */
-class CreateJavaProject implements CreateProject {
+class NewJavaProject implements NewProject {
 
     private ProgrammingLanguage programmingLanguage = ProgrammingLanguage.JAVA
 
     @Override
     void createDirectories(Project project) {
-        project.mkdir("src/main/java")
+        project.mkdir("src/main/$languageString")
         project.mkdir("src/main/resources")
-        project.mkdir("src/test/java")
+        project.mkdir("src/test/$languageString")
         project.mkdir("src/test/resources")
     }
 
@@ -28,7 +28,7 @@ class CreateJavaProject implements CreateProject {
 
     private AddSampleFile(Project project, String location, String filename) {
         File file = project.file("$location/$languageString/$filename")
-        String mainText = CreateJavaProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
+        String mainText = NewJavaProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
         if (file.length() == 0)
             file.text = mainText
     }
@@ -39,6 +39,16 @@ class CreateJavaProject implements CreateProject {
         String buildText = buildJavaBuildFile()
         if(!file.text.contains(buildText))
             file.text += buildText
+    }
+
+    @Override
+    String getName() {
+        "createJavaProject"
+    }
+
+    @Override
+    String getDescription() {
+        "Creates the folders, gradle.build file, and sample files for a new java project"
     }
 
     private String buildJavaBuildFile(){

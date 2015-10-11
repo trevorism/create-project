@@ -1,5 +1,6 @@
+//Delete me, sample class
 public class HelloJava {
-    public String sayHello(){
+    public String sayHello() {
         return "hello world";
     }
 }
