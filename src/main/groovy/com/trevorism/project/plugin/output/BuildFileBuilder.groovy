@@ -11,7 +11,7 @@ class BuildFileBuilder {
     private def pluginOutput = new PluginOutput()
     private def repositoryOutput = new RepositoryOutput()
     private def dependencyOutput = new DependencyOutput()
-    private def buildscriptPluginOutput = BuildscriptPluginOutput()
+    private def buildscriptPluginOutput = new BuildscriptPluginOutput()
     private boolean useBuildscriptPluginOutput = false
 
     BuildFileBuilder buildscriptPlugin(){
