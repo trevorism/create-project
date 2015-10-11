@@ -1,4 +1,4 @@
-# create-project : Gradle plugin for creating a new project.
+# create-project : Gradle plugin for creating a new project
 
 Start with a blank build.gradle file in a directory. Add:
 
