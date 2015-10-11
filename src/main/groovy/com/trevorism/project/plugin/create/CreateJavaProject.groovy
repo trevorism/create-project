@@ -22,17 +22,23 @@ class CreateJavaProject implements CreateProject {
 
     @Override
     void copyInSampleFiles(Project project) {
-        String mainText = CreateJavaProject.class.getClassLoader().getResourceAsStream("java/Hello.java").text
-        project.file("src/main/java/Hello.java").text = mainText
+        AddSampleFile(project, "src/main", "HelloJava.java")
+        AddSampleFile(project, "src/test", "HelloJavaTest.java")
+    }
 
-        String testText = CreateJavaProject.class.getClassLoader().getResourceAsStream("java/HelloTest.java").text
-        project.file("src/test/java/HelloTest.java").text = testText
+    private AddSampleFile(Project project, String location, String filename) {
+        File file = project.file("$location/$languageString/$filename")
+        String mainText = CreateJavaProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
+        if (file.length() == 0)
+            file.text = mainText
     }
 
     @Override
     void updateBuildFile(Project project) {
         File file = project.file("build.gradle")
-        file.text += buildJavaBuildFile()
+        String buildText = buildJavaBuildFile()
+        if(!file.text.contains(buildText))
+            file.text += buildText
     }
 
     private String buildJavaBuildFile(){
@@ -41,5 +47,9 @@ class CreateJavaProject implements CreateProject {
                 .dependency(new Dependency("testCompile", "junit:junit:4.12"))
 
         builder.build()
+    }
+
+    private String getLanguageString(){
+        programmingLanguage.name().toLowerCase()
     }
 }

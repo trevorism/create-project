@@ -9,7 +9,7 @@ class LoadResourceTester {
 
     @Test
     public void loadResource(){
-        String mainText = LoadResourceTester.class.getClassLoader().getResourceAsStream("java/Hello.java").text
+        String mainText = LoadResourceTester.class.getClassLoader().getResourceAsStream("java/HelloJava.java").text
         println mainText
     }
 }
