@@ -1,0 +1,14 @@
+
+pluginBundle {
+    website = 'http://www.trevorism.com/'
+    vcsUrl = 'https://github.com/trevorism/create-project'
+    description = 'Create standard folder structure, build file, and sample code with unit tests for a new project.'
+    tags = ['create project', 'java', 'groovy']
+
+    plugins {
+        createProjectPlugin {
+            id = 'com.trevorism.create-project'
+            displayName = 'Create New Project Gradle Plugin'
+        }
+    }
+}

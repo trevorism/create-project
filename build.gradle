@@ -1,16 +1,8 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "com.gradle.publish:plugin-publish-plugin:0.9.1"
-    }
+plugins {
+    id "com.gradle.plugin-publish" version "0.9.1"
 }
 
-apply plugin: "com.gradle.plugin-publish"
-
+apply from: 'plugin.gradle'
 apply plugin: 'groovy'
 
 version = "0.3"
@@ -23,18 +15,4 @@ repositories {
 dependencies {
     compile gradleApi()
     testCompile 'junit:junit:4.12'
-}
-
-pluginBundle {
-    website = 'http://www.trevorism.com/'
-    vcsUrl = 'https://github.com/trevorism/create-project'
-    description = 'Create standard folder structure, build file, and sample code with unit tests for a new project.'
-    tags = ['create project', 'java', 'groovy']
-
-    plugins {
-        createProjectPlugin {
-            id = 'com.trevorism.create-project'
-            displayName = 'Create New Project Gradle Plugin'
-        }
-    }
 }
