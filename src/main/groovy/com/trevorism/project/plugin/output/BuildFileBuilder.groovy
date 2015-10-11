@@ -11,6 +11,13 @@ class BuildFileBuilder {
     private def pluginOutput = new PluginOutput()
     private def repositoryOutput = new RepositoryOutput()
     private def dependencyOutput = new DependencyOutput()
+    private def buildscriptPluginOutput = BuildscriptPluginOutput()
+    private boolean useBuildscriptPluginOutput = false
+
+    BuildFileBuilder buildscriptPlugin(){
+        useBuildscriptPluginOutput = true
+        return this
+    }
 
     BuildFileBuilder plugin(ProgrammingLanguage language){
         pluginOutput.pluginName = language
@@ -25,6 +32,10 @@ class BuildFileBuilder {
     public String build(){
 
         def stringBuilder = new StringBuilder()
+        if(useBuildscriptPluginOutput) {
+            stringBuilder << "\n"
+            stringBuilder << buildscriptPluginOutput.output
+        }
         stringBuilder << "\n"
         stringBuilder << pluginOutput.output
         stringBuilder << "\n"
