@@ -2,6 +2,7 @@ package com.trevorism.project.plugin.output
 
 import com.trevorism.project.plugin.model.Dependency
 import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.request.LatestFromMavenCentral
 import org.junit.Test
 
 /**
@@ -34,4 +35,5 @@ class BuildFileBuilderTest {
 
         assert buildFileText.contains("dependencies {\n\tcompile ':com.trevorism:'\n}")
     }
+
 }

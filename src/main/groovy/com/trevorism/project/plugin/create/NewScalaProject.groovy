@@ -37,9 +37,7 @@ class NewScalaProject implements NewProject {
     @Override
     void updateBuildFile(Project project) {
         File file = project.file("build.gradle")
-        String buildText = buildScalaBuildFile()
-        if(!file.text.contains(buildText))
-            file.text += buildText
+        file.text = buildScalaBuildFile()
     }
 
     @Override

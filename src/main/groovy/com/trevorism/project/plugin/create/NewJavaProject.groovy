@@ -36,9 +36,7 @@ class NewJavaProject implements NewProject {
     @Override
     void updateBuildFile(Project project) {
         File file = project.file("build.gradle")
-        String buildText = buildJavaBuildFile()
-        if(!file.text.contains(buildText))
-            file.text += buildText
+        file.text = buildJavaBuildFile()
     }
 
     @Override

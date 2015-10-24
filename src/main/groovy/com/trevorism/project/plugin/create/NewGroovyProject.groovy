@@ -37,9 +37,7 @@ class NewGroovyProject implements NewProject {
     @Override
     void updateBuildFile(Project project) {
         File file = project.file("build.gradle")
-        String buildText = buildGroovyBuildFile()
-        if(!file.text.contains(buildText))
-            file.text += buildText
+        file.text = buildGroovyBuildFile()
     }
 
     @Override

@@ -7,6 +7,7 @@ apply plugin: 'groovy'
 
 version = "0.4"
 group = "com.trevorism"
+targetCompatibility = 1.6
 
 repositories {
     mavenCentral()

@@ -3,12 +3,12 @@
 Start with a blank build.gradle file in a directory. Add:
 
 > plugins {
->    id "com.trevorism.create-project" version "0.3"
+>    id "com.trevorism.create-project" version "0.4"
 > }
 
 to the build.gradle file.
 
-Then invoke one of the gradle tasks (e.g. createJavaProject, createGroovyProject)
+Then invoke one of the gradle tasks (e.g. createJavaProject, createGroovyProject, createScalaProject)
 This plugin does three things:
 
 * Creates the proper default folder structure for your project.
