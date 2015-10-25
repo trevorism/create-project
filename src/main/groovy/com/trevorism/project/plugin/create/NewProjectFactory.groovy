@@ -15,6 +15,8 @@ class NewProjectFactory {
                 return new NewGroovyProject()
             case ProgrammingLanguage.SCALA:
                 return new NewScalaProject()
+            case ProgrammingLanguage.JAVA_GROOVY:
+                return new NewJavaGroovyCompositeProject()
         }
     }
 }

@@ -5,9 +5,9 @@ plugins {
 apply from: 'plugin.gradle'
 apply plugin: 'groovy'
 
-version = "0.4"
+version = "0.5"
 group = "com.trevorism"
-targetCompatibility = 1.6
+targetCompatibility = "1.6"
 
 repositories {
     mavenCentral()
