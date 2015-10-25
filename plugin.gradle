@@ -1,14 +1,17 @@
 
 pluginBundle {
-    website = 'http://www.trevorism.com/'
+    website = 'https://github.com/trevorism/create-project'
     vcsUrl = 'https://github.com/trevorism/create-project'
     description = 'Create standard folder structure, build file, and sample code with unit tests for a new project.'
     tags = ['create project', 'java', 'groovy', 'scala']
 
     plugins {
         createProjectPlugin {
+            website = 'https://github.com/trevorism/create-project'
+            vcsUrl = 'https://github.com/trevorism/create-project'
             id = 'com.trevorism.create-project'
             displayName = 'Create New Project Gradle Plugin'
+            tags = ['create project', 'java', 'groovy', 'scala']
         }
     }
 }

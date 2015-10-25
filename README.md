@@ -3,7 +3,7 @@
 Start with a blank build.gradle file in a directory. Add:
 
 > plugins {
->    id "com.trevorism.create-project" version "0.5"
+>    id "com.trevorism.create-project" version "0.5.1"
 > }
 
 to the build.gradle file.
