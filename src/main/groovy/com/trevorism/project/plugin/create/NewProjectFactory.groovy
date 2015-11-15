@@ -1,22 +1,24 @@
 package com.trevorism.project.plugin.create
 
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.ProjectType
 
 /**
  * @author tbrooks
  */
 class NewProjectFactory {
 
-    static NewProject createNewProject(ProgrammingLanguage language) {
+    static NewProject createNewProject(ProjectType language) {
         switch (language) {
-            case ProgrammingLanguage.JAVA:
+            case ProjectType.JAVA:
                 return new NewJavaProject()
-            case ProgrammingLanguage.GROOVY:
+            case ProjectType.GROOVY:
                 return new NewGroovyProject()
-            case ProgrammingLanguage.SCALA:
+            case ProjectType.SCALA:
                 return new NewScalaProject()
-            case ProgrammingLanguage.JAVA_GROOVY:
+            case ProjectType.JAVA_GROOVY:
                 return new NewJavaGroovyCompositeProject()
+            case ProjectType.JAVA_WEB:
+                return new NewJavaWebProject()
         }
     }
 }

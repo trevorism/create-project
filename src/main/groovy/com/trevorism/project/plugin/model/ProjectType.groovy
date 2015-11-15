@@ -3,6 +3,6 @@ package com.trevorism.project.plugin.model
 /**
  * @author tbrooks
  */
-enum ProgrammingLanguage {
-    JAVA, GROOVY, SCALA, JAVA_GROOVY
+enum ProjectType {
+    JAVA, GROOVY, SCALA, JAVA_GROOVY, JAVA_WEB
 }

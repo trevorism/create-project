@@ -2,7 +2,7 @@ package com.trevorism.project.plugin
 
 import com.trevorism.project.plugin.create.NewProject
 import com.trevorism.project.plugin.create.NewProjectFactory
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.ProjectType
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -15,7 +15,7 @@ class CreateProjectPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
 
-        ProgrammingLanguage.values().each { ProgrammingLanguage language ->
+        ProjectType.values().each { ProjectType language ->
             createTaskForProject(project, NewProjectFactory.createNewProject(language))
         }
     }

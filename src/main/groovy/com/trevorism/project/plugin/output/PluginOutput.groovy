@@ -1,16 +1,20 @@
 package com.trevorism.project.plugin.output
-
-import com.trevorism.project.plugin.model.ProgrammingLanguage
-
+import com.trevorism.project.plugin.model.Plugin
 
 /**
  * @author tbrooks
  */
 class PluginOutput implements Output {
-    ProgrammingLanguage pluginName
+
+    List<Plugin> plugins = []
 
     @Override
     String getOutput() {
-        "apply plugin: '${pluginName?.name()?.toLowerCase() ?: ""}'\n"
+        def stringBuilder = new StringBuilder()
+
+        plugins.each{
+            stringBuilder << "$it\n"
+        }
+        return stringBuilder.toString()
     }
 }

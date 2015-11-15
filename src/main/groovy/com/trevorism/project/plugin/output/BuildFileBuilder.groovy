@@ -1,7 +1,7 @@
 package com.trevorism.project.plugin.output
 
 import com.trevorism.project.plugin.model.Dependency
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.Plugin
 
 /**
  * @author tbrooks
@@ -19,8 +19,8 @@ class BuildFileBuilder {
         return this
     }
 
-    BuildFileBuilder plugin(ProgrammingLanguage language){
-        pluginOutput.pluginName = language
+    BuildFileBuilder plugin(Plugin plugin){
+        pluginOutput.plugins << plugin
         return this
     }
 

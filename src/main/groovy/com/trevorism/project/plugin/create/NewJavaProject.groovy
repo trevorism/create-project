@@ -1,7 +1,8 @@
 package com.trevorism.project.plugin.create
 
 import com.trevorism.project.plugin.model.Dependency
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.Plugin
+import com.trevorism.project.plugin.model.ProjectType
 import com.trevorism.project.plugin.output.BuildFileBuilder
 import org.gradle.api.Project
 
@@ -10,7 +11,7 @@ import org.gradle.api.Project
  */
 class NewJavaProject implements NewProject {
 
-    private ProgrammingLanguage programmingLanguage = ProgrammingLanguage.JAVA
+    private ProjectType programmingLanguage = ProjectType.JAVA
 
     @Override
     void createDirectories(Project project) {
@@ -51,7 +52,7 @@ class NewJavaProject implements NewProject {
 
     private String buildJavaBuildFile(){
         def builder = new BuildFileBuilder()
-                .plugin(programmingLanguage)
+                .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "java"))
                 .dependency(new Dependency("testCompile", "junit:junit:4.12"))
 
         builder.build()

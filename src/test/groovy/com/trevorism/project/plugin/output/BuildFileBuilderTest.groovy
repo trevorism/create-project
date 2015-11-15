@@ -1,8 +1,7 @@
 package com.trevorism.project.plugin.output
 
 import com.trevorism.project.plugin.model.Dependency
-import com.trevorism.project.plugin.model.ProgrammingLanguage
-import com.trevorism.project.plugin.request.LatestFromMavenCentral
+import com.trevorism.project.plugin.model.Plugin
 import org.junit.Test
 
 /**
@@ -15,14 +14,13 @@ class BuildFileBuilderTest {
         def builder = new BuildFileBuilder()
         String buildFileText = builder.build()
 
-        assert buildFileText.contains("apply plugin: ''")
         assert buildFileText.contains("repositories {\n\tmavenCentral()\n}")
         assert buildFileText.contains("dependencies {\n}")
     }
 
     @Test
     void "build with java"() {
-        def builder = new BuildFileBuilder().plugin(ProgrammingLanguage.JAVA)
+        def builder = new BuildFileBuilder().plugin(new Plugin(Plugin.IncludeType.PLUGIN, "java"))
         String buildFileText = builder.build()
 
         assert buildFileText.contains("apply plugin: 'java'")

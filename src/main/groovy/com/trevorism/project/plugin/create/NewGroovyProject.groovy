@@ -1,7 +1,8 @@
 package com.trevorism.project.plugin.create
 
 import com.trevorism.project.plugin.model.Dependency
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.Plugin
+import com.trevorism.project.plugin.model.ProjectType
 import com.trevorism.project.plugin.output.BuildFileBuilder
 import com.trevorism.project.plugin.request.LatestFromMavenCentral
 import org.gradle.api.Project
@@ -11,7 +12,7 @@ import org.gradle.api.Project
  */
 class NewGroovyProject implements NewProject {
 
-    private ProgrammingLanguage programmingLanguage = ProgrammingLanguage.GROOVY
+    private ProjectType programmingLanguage = ProjectType.GROOVY
 
     @Override
     void createDirectories(Project project) {
@@ -52,7 +53,7 @@ class NewGroovyProject implements NewProject {
 
     private String buildGroovyBuildFile(){
         def builder = new BuildFileBuilder()
-                .plugin(programmingLanguage)
+                .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "groovy"))
                 .dependency(new Dependency("compile", "org.codehaus.groovy:groovy-all:${LatestFromMavenCentral.latestGroovyVersion}"))
                 .dependency(new Dependency("testCompile", "junit:junit:4.12"))
 

@@ -1,9 +1,9 @@
 package com.trevorism.project.plugin.create
 
 import com.trevorism.project.plugin.model.Dependency
-import com.trevorism.project.plugin.model.ProgrammingLanguage
+import com.trevorism.project.plugin.model.Plugin
+import com.trevorism.project.plugin.model.ProjectType
 import com.trevorism.project.plugin.output.BuildFileBuilder
-import com.trevorism.project.plugin.request.LatestFromMavenCentral
 import org.gradle.api.Project
 
 /**
@@ -11,7 +11,7 @@ import org.gradle.api.Project
  */
 class NewScalaProject implements NewProject {
 
-    private ProgrammingLanguage programmingLanguage = ProgrammingLanguage.SCALA
+    private ProjectType programmingLanguage = ProjectType.SCALA
 
     @Override
     void createDirectories(Project project) {
@@ -53,7 +53,7 @@ class NewScalaProject implements NewProject {
     private String buildScalaBuildFile(){
         def builder = new BuildFileBuilder()
                 .buildscriptPlugin()
-                .plugin(programmingLanguage)
+                .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "scala"))
                 .dependency(new Dependency("compile", "org.scala-lang:scala-library:2.11.7"))
                 .dependency(new Dependency("testCompile", "org.scalatest:scalatest_2.11:2.2.4"))
                 .dependency(new Dependency("testRuntime", "org.pegdown:pegdown:1.1.0"))
