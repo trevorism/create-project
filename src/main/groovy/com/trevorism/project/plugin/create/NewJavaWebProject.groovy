@@ -53,7 +53,7 @@ class NewJavaWebProject implements NewProject {
     private String buildJavaWebBuildFile(){
         def builder = new BuildFileBuilder()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "java"))
-                .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "web"))
+                .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "war"))
                 .plugin(new Plugin(Plugin.IncludeType.FROM, "https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin"))
                 .dependency(new Dependency("compile", "org.glassfish.jersey.containers:jersey-container-servlet:2.15"))
                 .dependency(new Dependency("compile", "org.glassfish.jersey.media:jersey-media-json-jackson:2.15"))

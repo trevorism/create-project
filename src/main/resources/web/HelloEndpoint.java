@@ -1,4 +1,4 @@
-package api;
+package webapi;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
