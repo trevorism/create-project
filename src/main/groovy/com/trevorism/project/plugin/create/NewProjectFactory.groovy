@@ -2,6 +2,8 @@ package com.trevorism.project.plugin.create
 
 import com.trevorism.project.plugin.model.ProjectType
 
+import static com.trevorism.project.plugin.model.ProjectType.*
+
 /**
  * @author tbrooks
  */
@@ -9,15 +11,17 @@ class NewProjectFactory {
 
     static NewProject createNewProject(ProjectType language) {
         switch (language) {
-            case ProjectType.JAVA:
+            case JAVA:
                 return new NewJavaProject()
-            case ProjectType.GROOVY:
+            case GROOVY:
                 return new NewGroovyProject()
-            case ProjectType.SCALA:
+            case GROOVY_SPRING_BOOT:
+                return new NewGroovySpringBootProject()
+            case SCALA:
                 return new NewScalaProject()
-            case ProjectType.JAVA_GROOVY:
+            case JAVA_GROOVY:
                 return new NewJavaGroovyCompositeProject()
-            case ProjectType.JAVA_WEB:
+            case JAVA_WEB:
                 return new NewJavaWebProject()
         }
     }

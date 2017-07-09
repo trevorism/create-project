@@ -1,4 +1,3 @@
-package com.trevorism.event.web
 
 import io.swagger.annotations.ApiOperation
 import io.swagger.annotations.ApiResponse

@@ -9,13 +9,13 @@ import org.junit.Test
 class DependencyOutputTest {
 
     @Test
-    public void "blank output"(){
+    void "blank output"(){
         def outputter = new DependencyOutput()
         assert "dependencies {\n}\n" == outputter.output
     }
 
     @Test
-    public void "output with dependencies"(){
+    void "output with dependencies"(){
         def outputter = new DependencyOutput()
         outputter.dependencies << new Dependency("compile", "com.trevorism:plugin:1.0")
         outputter.dependencies << new Dependency("blah", ":blah:")

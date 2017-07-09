@@ -9,13 +9,13 @@ import org.junit.Test
 class PluginOutputTest {
 
     @Test
-    public void "blank output"(){
+    void "blank output"(){
         def pluginOutput = new PluginOutput()
         assert "" == pluginOutput.output
     }
 
     @Test
-    public void "output with a name"(){
+    void "output with a name"(){
         def pluginOutput = new PluginOutput()
         pluginOutput.plugins << new Plugin(Plugin.IncludeType.PLUGIN, "java")
 

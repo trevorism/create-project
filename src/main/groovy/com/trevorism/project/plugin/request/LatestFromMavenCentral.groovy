@@ -7,11 +7,11 @@ import groovy.json.JsonSlurper
  */
 class LatestFromMavenCentral {
 
-    public static String getLatestGroovyVersion(){
+    static String getLatestGroovyVersion(){
         try{
             getLatestGroovyAllFromMavenCentral()
         }catch(Exception e){
-            return "2.4.5"
+            return "2.4.12"
         }
     }
 

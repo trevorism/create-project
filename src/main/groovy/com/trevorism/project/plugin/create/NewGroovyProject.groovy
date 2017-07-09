@@ -24,11 +24,11 @@ class NewGroovyProject implements NewProject {
 
     @Override
     void copyInSampleFiles(Project project) {
-        AddSampleFile(project, "src/main", "HelloGroovy.groovy")
-        AddSampleFile(project, "src/test", "HelloGroovyTest.groovy")
+        addSampleFile(project, "src/main", "HelloGroovy.groovy")
+        addSampleFile(project, "src/test", "HelloGroovyTest.groovy")
     }
 
-    private AddSampleFile(Project project, String location, String filename) {
+    private addSampleFile(Project project, String location, String filename) {
         File file = project.file("$location/$languageString/$filename")
         String mainText = NewGroovyProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
         if (file.length() == 0)

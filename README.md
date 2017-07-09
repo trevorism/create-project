@@ -3,7 +3,7 @@
 Start with a blank build.gradle file in a directory. Add:
 
 > plugins {
->    id "com.trevorism.create-project" version "0.6"
+>    id "com.trevorism.create-project" version "0.7"
 > }
 
 to the build.gradle file.
@@ -15,6 +15,7 @@ Then invoke one of the gradle tasks:
 * createJavaGroovyCompositeProject - Creates a new project with both java and groovy
 * createScalaProject - Creates a new scala project
 * createJavaWebProject - Creates a new java web project, with the jersey and jackson libraries.
+* createGroovySpringBootProject - Creates a new groovy web project, with spring boot.
 
 This plugin does three things:
 

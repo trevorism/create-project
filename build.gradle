@@ -1,11 +1,11 @@
 plugins {
-    id "com.gradle.plugin-publish" version "0.9.1"
+    id "com.gradle.plugin-publish" version "0.9.7"
 }
 
 apply from: 'plugin.gradle'
 apply plugin: 'groovy'
 
-version = "0.6"
+version = "0.6.1"
 group = "com.trevorism"
 targetCompatibility = "1.6"
 

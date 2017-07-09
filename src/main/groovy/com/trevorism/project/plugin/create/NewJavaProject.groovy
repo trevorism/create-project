@@ -23,11 +23,11 @@ class NewJavaProject implements NewProject {
 
     @Override
     void copyInSampleFiles(Project project) {
-        AddSampleFile(project, "src/main", "HelloJava.java")
-        AddSampleFile(project, "src/test", "HelloJavaTest.java")
+        addSampleFile(project, "src/main", "HelloJava.java")
+        addSampleFile(project, "src/test", "HelloJavaTest.java")
     }
 
-    private AddSampleFile(Project project, String location, String filename) {
+    private addSampleFile(Project project, String location, String filename) {
         File file = project.file("$location/$languageString/$filename")
         String mainText = NewJavaProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
         if (file.length() == 0)

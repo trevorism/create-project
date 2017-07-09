@@ -8,7 +8,7 @@ import org.junit.Test
 class RepositoryOutputTest {
 
     @Test
-    public void "repo output"(){
+    void "repo output"(){
         def repoOutput = new RepositoryOutput()
         assert "repositories {\n\tmavenCentral()\n}\n" == repoOutput.output
     }

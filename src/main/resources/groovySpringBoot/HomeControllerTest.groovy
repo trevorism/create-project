@@ -1,10 +1,6 @@
-package com.trevorism.event.web
 
 import org.junit.Test
 
-/**
- * @author tbrooks
- */
 class HomeControllerTest {
     @Test
     void testGetEndpoints() {
