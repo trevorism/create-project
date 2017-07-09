@@ -11,11 +11,13 @@ import org.gradle.api.Project
  */
 class NewGroovySpringBootProject implements NewProject {
 
-    private NewProject newGroovyProject = new NewGroovyProject()
 
     @Override
     void createDirectories(Project project) {
-        newGroovyProject.createDirectories(project)
+        project.mkdir("src/main/$languageString")
+        project.mkdir("src/main/resources")
+        project.mkdir("src/test/$languageString")
+        project.mkdir("src/test/resources")
     }
 
     @Override
@@ -28,7 +30,7 @@ class NewGroovySpringBootProject implements NewProject {
 
     private addSampleFile(Project project, String location, String filename) {
         File file = project.file("$location/$languageString/$filename")
-        String mainText = NewGroovyProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
+        String mainText = NewGroovySpringBootProject.class.getClassLoader().getResourceAsStream("$languageString/$filename").text
         if (file.length() == 0)
             file.text = mainText
     }
@@ -65,7 +67,7 @@ class NewGroovySpringBootProject implements NewProject {
 
     @Override
     String getName() {
-        return languageString
+        return "createGroovySpringBootProject"
     }
 
     @Override
