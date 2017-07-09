@@ -5,7 +5,7 @@ plugins {
 apply from: 'plugin.gradle'
 apply plugin: 'groovy'
 
-version = "0.6.1"
+version = "0.7"
 group = "com.trevorism"
 targetCompatibility = "1.6"
 
