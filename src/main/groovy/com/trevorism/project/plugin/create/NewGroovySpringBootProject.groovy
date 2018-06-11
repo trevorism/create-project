@@ -46,8 +46,8 @@ class NewGroovySpringBootProject implements NewProject {
     }
 
     String buildGroovySpringBootBuildFile() {
-        def springBootVersion = "1.5.4.RELEASE"
-        def swaggerVersion = "2.7.0"
+        def springBootVersion = "2.0.2.RELEASE"
+        def swaggerVersion = "2.8.0"
 
         def builder = new BuildFileBuilder()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "groovy"))

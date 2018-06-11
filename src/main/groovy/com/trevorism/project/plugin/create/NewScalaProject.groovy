@@ -54,9 +54,9 @@ class NewScalaProject implements NewProject {
         def builder = new BuildFileBuilder()
                 .buildscriptPlugin()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "scala"))
-                .dependency(new Dependency("compile", "org.scala-lang:scala-library:2.11.7"))
-                .dependency(new Dependency("testCompile", "org.scalatest:scalatest_2.11:2.2.4"))
-                .dependency(new Dependency("testRuntime", "org.pegdown:pegdown:1.1.0"))
+                .dependency(new Dependency("compile", "org.scala-lang:scala-library:2.12.6"))
+                .dependency(new Dependency("testCompile", "org.scalatest:scalatest_2.12:3.0.5"))
+                .dependency(new Dependency("testRuntime", "org.pegdown:pegdown:1.6.0"))
 
         builder.build()
     }

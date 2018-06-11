@@ -55,9 +55,9 @@ class NewJavaWebProject implements NewProject {
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "java"))
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "war"))
                 .plugin(new Plugin(Plugin.IncludeType.FROM, "https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin"))
-                .dependency(new Dependency("compile", "org.glassfish.jersey.containers:jersey-container-servlet:2.15"))
-                .dependency(new Dependency("compile", "org.glassfish.jersey.media:jersey-media-json-jackson:2.15"))
-                .dependency(new Dependency("compile", "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.0"))
+                .dependency(new Dependency("compile", "org.glassfish.jersey.containers:jersey-container-servlet:2.27"))
+                .dependency(new Dependency("compile", "org.glassfish.jersey.media:jersey-media-json-jackson:2.27"))
+                .dependency(new Dependency("compile", "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.5"))
                 .dependency(new Dependency("testCompile", "junit:junit:4.12"))
 
         builder.build()
