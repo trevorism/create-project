@@ -8,19 +8,19 @@ import org.junit.Test
 class LoadResourceTester {
 
     @Test
-    public void loadMainResource(){
+    void loadMainResource(){
         String mainText = LoadResourceTester.class.getClassLoader().getResourceAsStream("java/HelloJava.java").text
         assert mainText.length() > 0
     }
 
     @Test
-    public void loadTestResource(){
+    void loadTestResource(){
         String mainText = LoadResourceTester.class.getClassLoader().getResourceAsStream("java/HelloJavaTest.java").text
         assert mainText.length() > 0
     }
 
     @Test
-    public void loadMissingResource(){
+    void loadMissingResource(){
         def missingResource = LoadResourceTester.class.getClassLoader().getResourceAsStream("java/Hello")
         assert missingResource == null
     }
