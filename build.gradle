@@ -1,9 +1,10 @@
 plugins {
+    id "groovy"
+    id "jacoco"
     id "com.gradle.plugin-publish" version "0.9.10"
 }
 
 apply from: 'plugin.gradle'
-apply plugin: 'groovy'
 
 version = "0.8"
 group = "com.trevorism"
@@ -16,4 +17,8 @@ repositories {
 dependencies {
     compile gradleApi()
     testCompile 'junit:junit:4.12'
+}
+
+check{
+    dependsOn('jacocoTestReport')
 }
