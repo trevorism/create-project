@@ -54,12 +54,11 @@ class NewGroovyProject implements NewProject {
     private String buildGroovyBuildFile(){
         def builder = new BuildFileBuilder()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "groovy"))
-                .dependency(new Dependency("compile", "org.codehaus.groovy:groovy-all:${LatestFromMavenCentral.latestGroovyVersion}"))
-                .dependency(new Dependency("testCompile", "junit:junit:4.12"))
+                .dependency(new Dependency("implementation", "org.codehaus.groovy:groovy-all:${LatestFromMavenCentral.latestGroovyVersion}"))
+                .dependency(new Dependency("testImplementation", "junit:junit:4.13"))
 
         builder.build()
     }
-
 
     private String getLanguageString(){
         programmingLanguage.name().toLowerCase()

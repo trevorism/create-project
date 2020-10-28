@@ -11,7 +11,7 @@ class LatestFromMavenCentral {
         try{
             getLatestGroovyAllFromMavenCentral()
         }catch(Exception e){
-            return "2.4.15"
+            return "2.5.13"
         }
     }
 

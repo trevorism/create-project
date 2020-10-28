@@ -1,22 +1,21 @@
 plugins {
     id "groovy"
     id "jacoco"
-    id "com.gradle.plugin-publish" version "0.9.10"
+    id "com.gradle.plugin-publish" version "0.12.0"
 }
 
 apply from: 'plugin.gradle'
 
-version = "0.8"
+version = "0.9.0"
 group = "com.trevorism"
-targetCompatibility = "1.6"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile gradleApi()
-    testCompile 'junit:junit:4.12'
+    implementation gradleApi()
+    testImplementation 'junit:junit:4.13'
 }
 
 check{

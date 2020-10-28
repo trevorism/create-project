@@ -1,9 +1,15 @@
 # create-project : Gradle plugin for creating a new project
+![Jenkins](https://img.shields.io/jenkins/build/http/trevorism-build.eastus.cloudapp.azure.com/create-project)
+![Jenkins Coverage](https://img.shields.io/jenkins/coverage/jacoco/http/trevorism-build.eastus.cloudapp.azure.com/create-project)
+![GitHub last commit](https://img.shields.io/github/last-commit/trevorism/create-project)
+![GitHub language count](https://img.shields.io/github/languages/count/trevorism/create-project)
+![GitHub top language](https://img.shields.io/github/languages/top/trevorism/create-project)
+
 
 Start with a blank build.gradle file in a directory. Add:
 
 > plugins {
->    id "com.trevorism.create-project" version "0.8"
+>    id "com.trevorism.create-project" version "0.9.0"
 > }
 
 to the build.gradle file.

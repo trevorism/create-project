@@ -46,20 +46,20 @@ class NewGroovySpringBootProject implements NewProject {
     }
 
     String buildGroovySpringBootBuildFile() {
-        def springBootVersion = "2.0.2.RELEASE"
-        def swaggerVersion = "2.8.0"
+        def springBootVersion = "2.3.4.RELEASE"
+        def swaggerVersion = "3.0.0"
 
         def builder = new BuildFileBuilder()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "groovy"))
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "war"))
-                .dependency(new Dependency("compile", "org.codehaus.groovy:groovy-all:${LatestFromMavenCentral.latestGroovyVersion}"))
-                .dependency(new Dependency("compile", "org.springframework.boot:spring-boot-starter-web:$springBootVersion"))
-                .dependency(new Dependency("compile", "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"))
-                .dependency(new Dependency("compile", "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"))
-                .dependency(new Dependency("compile", "io.springfox:springfox-swagger-ui:$swaggerVersion"))
-                .dependency(new Dependency("compile", "io.springfox:springfox-swagger2:$swaggerVersion"))
-                .dependency(new Dependency("testCompile", "org.springframework.boot:spring-boot-starter-test:$springBootVersion"))
-                .dependency(new Dependency("testCompile", "junit:junit:4.12"))
+                .dependency(new Dependency("implementation", "org.codehaus.groovy:groovy-all:${LatestFromMavenCentral.latestGroovyVersion}"))
+                .dependency(new Dependency("implementation", "org.springframework.boot:spring-boot-starter-web:$springBootVersion"))
+                .dependency(new Dependency("implementation", "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"))
+                .dependency(new Dependency("implementation", "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"))
+                .dependency(new Dependency("implementation", "io.springfox:springfox-swagger-ui:$swaggerVersion"))
+                .dependency(new Dependency("implementation", "io.springfox:springfox-swagger2:$swaggerVersion"))
+                .dependency(new Dependency("testImplementation", "org.springframework.boot:spring-boot-starter-test:$springBootVersion"))
+                .dependency(new Dependency("testImplementation", "junit:junit:4.13"))
 
         builder.build()
 

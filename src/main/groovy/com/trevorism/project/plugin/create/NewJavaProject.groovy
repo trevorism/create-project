@@ -53,7 +53,7 @@ class NewJavaProject implements NewProject {
     private String buildJavaBuildFile(){
         def builder = new BuildFileBuilder()
                 .plugin(new Plugin(Plugin.IncludeType.PLUGIN, "java"))
-                .dependency(new Dependency("testCompile", "junit:junit:4.12"))
+                .dependency(new Dependency("testImplementation", "junit:junit:4.13.1"))
 
         builder.build()
     }
