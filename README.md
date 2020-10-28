@@ -1,10 +1,13 @@
-# create-project : Gradle plugin for creating a new project
+# create-project 
 ![Jenkins](https://img.shields.io/jenkins/build/http/trevorism-build.eastus.cloudapp.azure.com/create-project)
 ![Jenkins Coverage](https://img.shields.io/jenkins/coverage/jacoco/http/trevorism-build.eastus.cloudapp.azure.com/create-project)
 ![GitHub last commit](https://img.shields.io/github/last-commit/trevorism/create-project)
 ![GitHub language count](https://img.shields.io/github/languages/count/trevorism/create-project)
 ![GitHub top language](https://img.shields.io/github/languages/top/trevorism/create-project)
 
+Gradle plugin for creating a new project
+
+## Usage
 
 Start with a blank build.gradle file in a directory. Add:
 
@@ -30,10 +33,19 @@ This plugin does three things:
 * Provides a sample class and test class so that you can see working software in your IDE.
 
 After executing the create-project task,
-> gradle clean build
+
+`gradle clean build`
 
 should run successfully, building the sample file and executing the sample test.
 
-Plugin Information -- https://plugins.gradle.org/plugin/com.trevorism.create-project
+## Plugin Information 
 
-About me -- http://www.trevorism.com
+https://plugins.gradle.org/plugin/com.trevorism.create-project
+
+## License
+
+[MIT](https://github.com/trevorism/create-project/blob/master/LICENSE)
+
+## About
+ 
+https://trevorism.com
